@@ -48,10 +48,10 @@ O projeto utiliza:
 
 #  Equipe
 
-* Integrante 1
-* Integrante 2
-* Integrante 3
-* Integrante 4
+* Kaique Primissia
+* Luís Felipe Correia
+* Marco Antônio
+* Nicolas Ricardo
 
 ---
 
