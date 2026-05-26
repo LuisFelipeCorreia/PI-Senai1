@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>SESI - Alimentação</title>
-    <link rel="icon" href="img/food-icon.png" type="image/png" />
+    <link rel="icon" href="/img/food-icon.png" type="image/png" />
 
     <!-- FONTES -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,7 +23,7 @@
     />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="/src/home.css" />
   </head>
 
   <body>
@@ -31,7 +31,7 @@
     <header class="header">
       <div class="logo-area">
         <!-- COLOQUE A LOGO SESI AQUI -->
-        <img src="img/sesi-logo.png" class="sesi-logo" />
+        <img src="/img/sesi-logo.png" class="sesi-logo" />
 
         <div>
           <h1 class="logo-title">CANTINA SESI</h1>
@@ -76,51 +76,51 @@
       </h2>
 
       <p class="categories-description" id="pageDescription">
-        <img src="img/seta.png" class="subtitle-arrow left-arrow" />
+        <img src="/img/seta.png" class="subtitle-arrow left-arrow" />
         Escolha através das categorias abaixo e faça seu pedido!
-        <img src="img/seta.png" class="subtitle-arrow" />
+        <img src="/img/seta.png" class="subtitle-arrow" />
       </p>
 
       <!-- GRID -->
       <section class="categories-grid" id="categoriesGrid">
         <!-- CARD -->
         <div class="category-card" onclick="openCategory('lanches')">
-          <img src="img/lanche.png" />
+          <img src="/img/lanche.png" />
 
           <div class="overlay green"></div>
         </div>
 
         <!-- CARD -->
         <div class="category-card" onclick="openCategory('salgados')">
-          <img src="img/salgados.png" />
+          <img src="/img/salgados.png" />
 
           <div class="overlay orange"></div>
         </div>
 
         <!-- CARD -->
         <div class="category-card" onclick="openCategory('bebidas')">
-          <img src="img/bebidas.png" />
+          <img src="/img/bebidas.png" />
 
           <div class="overlay lime"></div>
         </div>
 
         <!-- CARD -->
         <div class="category-card" onclick="openCategory('doces')">
-          <img src="img/doces.png" />
+          <img src="/img/doces.png" />
 
           <div class="overlay red"></div>
         </div>
 
         <!-- CARD -->
         <div class="category-card" onclick="openCategory('combos')">
-          <img src="img/combos.png" />
+          <img src="/img/combos.png" />
 
           <div class="overlay blue"></div>
         </div>
 
         <!-- CARD -->
         <div class="category-card" onclick="openCategory('sorvetes')">
-          <img src="img/sorvetes.png" />
+          <img src="/img/sorvetes.png" />
 
           <div class="overlay purple"></div>
         </div>
@@ -192,7 +192,7 @@
         <div class="loader-ring"></div>
 
         <div class="loader-logo">
-          <img src="img/food-icon.png" alt="Logo" />
+          <img src="/img/food-icon.png" alt="Logo" />
         </div>
       </div>
 
@@ -202,6 +202,6 @@
     <!-- TOAST -->
     <div class="toast-container" id="toastContainer"></div>
 
-    <script src="home.js"></script>
+    <script src="/src/home.js"></script>
   </body>
 </html>
