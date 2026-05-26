@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Painel Admin - Cantina SESI</title>
+    <link rel="icon" href="img/food-icon.png" type="image/png" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+
+  <body>
+    <main class="admin-page">
+      <header class="admin-header">
+        <button class="back-home-btn" id="backHomeBtn">
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+        <img src="img/sesi-logo.png" alt="SESI" class="admin-logo" />
+
+        <h1>PAINEL ADMIN</h1>
+      </header>
+
+      <section class="admin-tabs">
+        <button class="admin-tab active" data-tab="products">
+          <i class="fa-solid fa-cube"></i>
+          Produtos
+        </button>
+
+        <button class="admin-tab" data-tab="orders">
+          <i class="fa-regular fa-clipboard"></i>
+          Pedidos
+        </button>
+
+        <button class="admin-tab" data-tab="stats">
+          <i class="fa-solid fa-arrow-trend-up"></i>
+          Estatísticas
+        </button>
+      </section>
+
+      <section class="admin-section active" id="productsTab">
+        <div class="products-top">
+          <p><span id="productsCount">0</span> produtos cadastrados</p>
+
+          <button class="new-product-btn">
+            <i class="fa-solid fa-plus"></i>
+            Novo Produto
+          </button>
+        </div>
+
+        <div class="products-table">
+          <div class="table-head">
+            <span>Produto</span>
+            <span>Categoria</span>
+            <span>Preço</span>
+            <span>Status</span>
+            <span>Ações</span>
+          </div>
+
+          <div id="productsAdminGrid"></div>
+        </div>
+      </section>
+
+      <section class="admin-section" id="ordersTab">
+        <div class="orders-header">
+          <p>
+            <span id="ordersCount">0</span> pedidos — Clique no status para
+            alternar
+          </p>
+
+          <div class="orders-filters">
+            <button class="order-filter active" data-filter="todos">
+              Todos
+            </button>
+            <button class="order-filter" data-filter="A Fazer">A Fazer</button>
+            <button class="order-filter" data-filter="Pronto">Prontos</button>
+          </div>
+        </div>
+
+        <div class="orders-list" id="ordersList"></div>
+      </section>
+
+      <section class="admin-section" id="statsTab">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <i class="fa-regular fa-clipboard"></i>
+            <h2 id="ordersToday">0</h2>
+            <p>Pedidos Hoje</p>
+          </div>
+
+          <div class="stat-card">
+            <i class="fa-solid fa-arrow-trend-up"></i>
+            <h2 id="billingToday">R$ 0,00</h2>
+            <p>Faturamento Hoje</p>
+          </div>
+        </div>
+
+        <div class="monthly-card">
+          <h3>FATURAMENTO MENSAL</h3>
+
+          <div class="monthly-content">
+            <button>
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+
+            <div>
+              <h4>Março 2026</h4>
+              <strong id="monthlyBilling">R$ 0,00</strong>
+              <p>↓ 2632.50 vs Fevereiro</p>
+            </div>
+
+            <button>
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="today-orders-card">
+          <h3>PEDIDOS DE HOJE</h3>
+
+          <div id="todayOrdersList"></div>
+        </div>
+      </section>
+    </main>
+
+    <div class="edit-modal" id="editModal">
+      <div class="edit-modal-content">
+        <button class="modal-close" id="closeEditModal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <h2>EDITAR PRODUTO</h2>
+
+        <form class="edit-form">
+          <label>Nome</label>
+          <input type="text" id="editName" />
+
+          <label>Descrição / Categoria</label>
+          <input type="text" id="editSub" />
+
+          <label>Preço (R$)</label>
+          <input type="number" id="editPrice" step="0.01" />
+
+          <label>Imagem do Produto</label>
+          <input type="text" id="editImage" />
+
+          <button type="button" id="saveEditBtn">Salvar Alterações</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="loading-screen" id="loadingScreen">
+      <div class="loader-wrapper">
+        <div class="loader-ring"></div>
+
+        <div class="loader-logo">
+          <img src="img/food-icon.png" alt="Logo" />
+        </div>
+      </div>
+
+      <p class="loading-text">Carregando . . .</p>
+    </div>
+
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="admin.js"></script>
+  </body>
+</html>

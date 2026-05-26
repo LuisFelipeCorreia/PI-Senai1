@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SESI - Alimentação</title>
+
+  <link rel="icon" href="img/food-icon.png" type="image/png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <link rel="stylesheet" href="pagamento.css">
+</head>
+
+<body>
+
+  <main class="success-container">
+
+    <div class="success-icon">
+      <i class="fa-solid fa-check"></i>
+    </div>
+
+    <h1>PAGAMENTO REALIZADO</h1>
+
+    <p>
+      Seu pedido foi confirmado com sucesso.  
+      Obrigado por comprar na Cantina SESI!
+    </p>
+
+    <button id="backHomeBtn">
+      Voltar para Home
+    </button>
+
+  </main>
+
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loader-wrapper">
+      <div class="loader-ring"></div>
+
+      <div class="loader-logo">
+        <img src="img/food-icon.png" alt="Logo">
+      </div>
+    </div>
+
+    <p class="loading-text">Carregando...</p>
+  </div>
+
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="pagamento.js"></script>
+</body>
+</html>

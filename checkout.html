@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>SESI - Alimentação</title>
+    <link rel="icon" href="img/food-icon.png" type="image/png" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="checkout.css" />
+  </head>
+
+  <body>
+    <main class="checkout">
+      <button type="button" class="back-cart" id="backCartBtn">
+        ← Voltar ao carrinho
+      </button>
+
+      <div class="checkout-title">
+        <img src="img/food-icon.png" />
+        <h1>FINALIZAR PEDIDO</h1>
+      </div>
+
+      <section class="summary-card">
+        <h2>RESUMO DO PEDIDO</h2>
+
+        <div id="summaryItems"></div>
+
+        <div class="summary-total">
+          <strong>Total</strong>
+          <span id="summaryTotal">R$ 0.00</span>
+        </div>
+      </section>
+
+      <h2 class="payment-title">MÉTODO DE PAGAMENTO</h2>
+
+      <section class="payments">
+        <button class="payment-option" data-payment="PIX">
+          <div class="payment-icon">
+            <i class="fa-solid fa-qrcode"></i>
+          </div>
+
+          <div>
+            <strong>PIX</strong>
+            <p>Pagamento instantâneo</p>
+          </div>
+        </button>
+
+        <button class="payment-option" data-payment="Cartão">
+          <div class="payment-icon">
+            <i class="fa-regular fa-credit-card"></i>
+          </div>
+
+          <div>
+            <strong>Cartão</strong>
+            <p>Crédito ou Débito</p>
+          </div>
+        </button>
+
+        <button class="payment-option" data-payment="Dinheiro">
+          <div class="payment-icon">
+            <i class="fa-solid fa-money-bill-wave"></i>
+          </div>
+
+          <div>
+            <strong>Dinheiro</strong>
+            <p>Pagamento no balcão</p>
+          </div>
+        </button>
+      </section>
+
+      <button class="pay-btn" id="payBtn">Pagar R$ 0.00</button>
+    </main>
+
+    <!-- MODAL PAGAMENTO -->
+    <div class="payment-modal" id="paymentModal">
+      <div class="payment-modal-content">
+        <button class="modal-close" id="closePaymentModal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div id="modalPaymentContent"></div>
+      </div>
+    </div>
+
+    <div class="loading-screen" id="loadingScreen">
+      <div class="loader-wrapper">
+        <div class="loader-ring"></div>
+
+        <div class="loader-logo">
+          <img src="img/food-icon.png" alt="Logo" />
+        </div>
+      </div>
+
+      <p class="loading-text">Voltando . . .</p>
+    </div>
+
+    <!-- TOAST -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="checkout.js"></script>
+  </body>
+</html>

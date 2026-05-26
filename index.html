@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>SESI - Alimentação</title>
+    <link rel="icon" href="img/food-icon.png" type="image/png" />
+
+    <!-- FONTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ICONS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- LOGO SESI -->
+    <div class="sesi-top">
+      <img src="img/sesi-logo.png" alt="SESI" />
+    </div>
+
+    <!-- BOTAO DARK MODE -->
+    <button id="themeToggle" class="theme-toggle">
+      <i class="fa-regular fa-moon"></i>
+    </button>
+
+    <!-- BOTAO HELP -->
+    <button id="helpButton" class="help-toggle">
+      <i class="fa-regular fa-circle-question"></i>
+    </button>
+
+    <div class="help-modal" id="helpModal">
+      <div class="help-content">
+        <button class="help-close" id="closeHelp">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <h2>Como funciona?</h2>
+
+        <p>
+          A Cantina SESI permite que o aluno faça pedidos pelo sistema, escolha
+          os produtos, selecione o pagamento e acompanhe a confirmação.
+        </p>
+      </div>
+    </div>
+
+    <!-- CONTAINER -->
+    <main class="container">
+      <section class="login-box">
+        <!-- LOGO -->
+        <img class="food-logo" src="img/food-icon.png" alt="Logo" />
+
+        <!-- TITULO -->
+        <h1 class="title">CANTINA SESI</h1>
+
+        <!-- SUBTITULO -->
+        <p class="subtitle">Sistema de Pedidos — SESI/SENAI</p>
+
+        <!-- FORM -->
+        <form class="form" id="loginForm">
+          <!-- EMAIL -->
+          <label class="label"> EMAIL EDUCACIONAL: </label>
+
+          <div class="input-group">
+            <i class="fa-regular fa-envelope"></i>
+
+            <input type="email" placeholder="Digite seu email" />
+          </div>
+
+          <!-- SENHA -->
+          <label class="label"> SENHA: </label>
+
+          <div class="input-group">
+            <i class="fa-solid fa-lock"></i>
+
+            <input
+              type="password"
+              placeholder="Digite sua senha"
+              id="password"
+            />
+
+            <i class="fa-regular fa-eye eye" id="togglePassword"></i>
+          </div>
+
+          <!-- BOTÃO -->
+          <button type="button" class="login-btn">Entrar</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>© 2026 Cantina SESI. Todos os direitos reservados.</footer>
+
+    <!-- LOADING -->
+    <div class="loading-screen" id="loadingScreen">
+      <div class="loader-wrapper">
+        <div class="loader-ring"></div>
+
+        <div class="loader-logo">
+          <img src="img/food-icon.png" alt="Logo" />
+        </div>
+      </div>
+
+      <p class="loading-text">Entrando . . .</p>
+    </div>
+
+    <!-- TOAST -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+  </body>
+</html>
