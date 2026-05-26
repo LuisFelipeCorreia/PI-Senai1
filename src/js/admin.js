@@ -370,32 +370,38 @@ function renderStats() {
    PEDIDOS
 ========================================= */
 
-function renderOrders(){
+function renderOrders() {
   orders = JSON.parse(localStorage.getItem("orders")) || [];
 
-  if(ordersCount){
+  if (ordersCount) {
     ordersCount.innerText = orders.length;
   }
 
-  if(totalOrders){
+  if (totalOrders) {
     totalOrders.innerText = orders.length;
   }
 
-  if(pendingOrders){
-    pendingOrders.innerText = orders.filter(order => order.status === "A Fazer").length;
+  if (pendingOrders) {
+    pendingOrders.innerText = orders.filter(
+      (order) => order.status === "A Fazer",
+    ).length;
   }
 
-  if(doneOrders){
-    doneOrders.innerText = orders.filter(order => order.status === "Pronto").length;
+  if (doneOrders) {
+    doneOrders.innerText = orders.filter(
+      (order) => order.status === "Pronto",
+    ).length;
   }
 
   let filteredOrders = orders;
 
-  if(currentOrderFilter !== "todos"){
-    filteredOrders = orders.filter(order => order.status === currentOrderFilter);
+  if (currentOrderFilter !== "todos") {
+    filteredOrders = orders.filter(
+      (order) => order.status === currentOrderFilter,
+    );
   }
 
-  if(filteredOrders.length === 0){
+  if (filteredOrders.length === 0) {
     ordersList.innerHTML = `
       <div class="empty-orders">
         <i class="fa-solid fa-box-open"></i>
@@ -406,18 +412,21 @@ function renderOrders(){
     return;
   }
 
-  ordersList.innerHTML = filteredOrders.map(order => {
-    const itemsText = order.items.map(item => {
-      return `${item.quantity}x ${item.name}`;
-    }).join(", ");
+  ordersList.innerHTML = filteredOrders
+    .map((order) => {
+      const itemsText = order.items
+        .map((item) => {
+          return `${item.quantity}x ${item.name}`;
+        })
+        .join(", ");
 
-    return `
+      return `
       <div class="order-card">
         <div class="order-info">
           <h3>Pedido #${order.id}</h3>
 
           <p class="order-customer">
-            ${order.customer} — ${order.createdAt}
+            ${order.customer} — ${order.createdAt} às ${order.createdTime || "--:--"}
           </p>
 
           <p class="order-items">
@@ -437,7 +446,8 @@ function renderOrders(){
         </button>
       </div>
     `;
-  }).join("");
+    })
+    .join("");
 }
 
 orderFilters.forEach((button) => {
@@ -526,15 +536,13 @@ function renderProducts() {
           ${formatPrice(product.price)}
         </span>
 
-        <span class="product-status ${product.active ? "" : "off"}">
-
+        <span class="product-status ${product.active ? "active" : "off"}">
           <button
-            class="toggle-product"
+            class="switch-product"
             onclick="toggleProductStatus(${product.id})"
           >
-            <i class="fa-solid fa-toggle-on"></i>
+            <span></span>
           </button>
-
         </span>
 
         <div class="product-actions">

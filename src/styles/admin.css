@@ -686,3 +686,33 @@ body:not(.dark) .order-filter.active{
   background:#12351f;
   color:#21df71;
 }
+
+.switch-product{
+  width:38px;
+  height:20px;
+  border:none;
+  border-radius:999px;
+  background:#00d666;
+  cursor:pointer;
+  position:relative;
+  padding:0;
+}
+
+.switch-product span{
+  width:14px;
+  height:14px;
+  border-radius:50%;
+  background:white;
+  position:absolute;
+  top:3px;
+  left:3px;
+  transition:.2s;
+}
+
+.product-status.off .switch-product{
+  background:#777;
+}
+
+.product-status.off .switch-product span{
+  left:21px;
+}

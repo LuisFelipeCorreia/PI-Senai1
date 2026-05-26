@@ -129,7 +129,6 @@ function renderCheckout() {
 
 paymentOptions.forEach((option) => {
   option.addEventListener("click", () => {
-
     paymentOptions.forEach((item) => {
       item.classList.remove("selected");
     });
@@ -143,7 +142,6 @@ paymentOptions.forEach((option) => {
       "Pagamento selecionado!",
       `Método escolhido: ${selectedPayment}`,
     );
-
   });
 });
 
@@ -152,31 +150,23 @@ paymentOptions.forEach((option) => {
 ========================================= */
 
 payBtn.addEventListener("click", () => {
-
-  if(cart.length === 0){
-
-    showToast(
-      "error",
-      "Carrinho vazio!",
-      "Adicione itens antes de pagar"
-    );
+  if (cart.length === 0) {
+    showToast("error", "Carrinho vazio!", "Adicione itens antes de pagar");
 
     return;
   }
 
-  if(selectedPayment === ""){
-
+  if (selectedPayment === "") {
     showToast(
       "error",
       "Escolha o pagamento!",
-      "Selecione PIX, Cartão ou Dinheiro"
+      "Selecione PIX, Cartão ou Dinheiro",
     );
 
     return;
   }
 
   openPaymentModal(selectedPayment);
-
 });
 
 /* =========================================
@@ -218,7 +208,13 @@ function finishPayment() {
     total: total,
     payment: selectedPayment,
     status: "A Fazer",
+
     createdAt: new Date().toLocaleDateString("pt-BR"),
+
+    createdTime: new Date().toLocaleTimeString("pt-BR", {
+      hour: "2-digit",
+      minute: "2-digit",
+    }),
   });
 
   localStorage.setItem("orders", JSON.stringify(orders));
