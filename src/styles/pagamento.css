@@ -248,3 +248,86 @@ body.dark .toast i{
 body.dark .toast p{
   color:#bdbdbd;
 }
+
+/* =========================
+   RESPONSIVO PAGAMENTO
+========================= */
+
+@media(max-width: 768px){
+
+  body{
+    padding:24px 18px;
+    align-items:center;
+  }
+
+  .success-container{
+    width:100%;
+    max-width:420px;
+    padding:24px 18px;
+  }
+
+  .success-icon{
+    width:105px;
+    height:105px;
+    font-size:48px;
+    margin-bottom:24px;
+  }
+
+  .success-container h1{
+    font-size:30px;
+    line-height:1.1;
+  }
+
+  .success-container p{
+    font-size:15px;
+    line-height:1.5;
+    margin-bottom:26px;
+  }
+
+  .success-container button{
+    height:52px;
+    font-size:15px;
+  }
+
+  .toast-container{
+    left:16px;
+    right:16px;
+    bottom:18px;
+  }
+
+  .toast{
+    width:100%;
+  }
+}
+
+@media(max-width: 420px){
+
+  .success-icon{
+    width:92px;
+    height:92px;
+    font-size:42px;
+  }
+
+  .success-container h1{
+    font-size:26px;
+  }
+
+  .success-container p{
+    font-size:14px;
+  }
+
+  .loader-wrapper{
+    width:105px;
+    height:105px;
+  }
+
+  .loader-ring{
+    width:96px;
+    height:96px;
+  }
+
+  .loader-logo{
+    width:54px;
+    height:54px;
+  }
+}

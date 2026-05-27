@@ -591,18 +591,37 @@ body.dark .toast{
   color:#8b8b95;
 }
 
+.edit-form select{
+  height:46px;
+
+  border:1px solid #dadada;
+  border-radius:10px;
+
+  background:#f8f8f8;
+  color:#111;
+
+  padding:0 14px;
+
+  font-family:'Poppins', sans-serif;
+
+  outline:none;
+}
+
+body.dark .edit-form select{
+  border:1px solid #383838;
+  background:#181818;
+  color:white;
+}
+
 @media(max-width:800px){
+  .products-table{
+    overflow-x:auto;
+  }
 
   .table-head,
   .admin-product-row{
-    grid-template-columns:1.6fr 1fr .8fr;
-  }
-
-  .table-head span:nth-child(4),
-  .table-head span:nth-child(5),
-  .admin-product-row > *:nth-child(4),
-  .admin-product-row > *:nth-child(5){
-    display:none;
+    min-width:760px;
+    grid-template-columns:2fr 1.15fr .9fr .8fr .8fr;
   }
 
   .stats-grid{
@@ -715,4 +734,265 @@ body:not(.dark) .order-filter.active{
 
 .product-status.off .switch-product span{
   left:21px;
+}
+
+/* =========================
+   RESPONSIVO ADMIN
+========================= */
+
+@media(max-width: 900px){
+
+  .admin-page{
+    padding:22px 16px 90px;
+  }
+
+  .admin-header{
+    gap:10px;
+    margin-bottom:22px;
+  }
+
+  .admin-logo{
+    width:95px;
+  }
+
+  .admin-header h1{
+    font-size:24px;
+  }
+
+  .admin-tabs{
+    overflow-x:auto;
+    padding-bottom:4px;
+    margin-bottom:28px;
+  }
+
+  .admin-tabs::-webkit-scrollbar{
+    display:none;
+  }
+
+  .admin-tab{
+    min-width:max-content;
+    height:42px;
+    font-size:14px;
+  }
+
+  .products-top{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:14px;
+  }
+
+  .new-product-btn{
+    width:100%;
+    justify-content:center;
+  }
+
+  /* TABELA PRODUTOS */
+
+  .products-table{
+    overflow-x:auto;
+    border-radius:14px;
+  }
+
+  .table-head,
+  .admin-product-row{
+    min-width:760px;
+  }
+
+  /* PEDIDOS */
+
+  .orders-header{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .orders-filters{
+    width:100%;
+    overflow-x:auto;
+    padding-bottom:4px;
+  }
+
+  .orders-filters::-webkit-scrollbar{
+    display:none;
+  }
+
+  .order-filter{
+    min-width:max-content;
+  }
+
+  .order-card{
+    flex-direction:column;
+    gap:16px;
+  }
+
+  .order-status-btn{
+    width:100%;
+  }
+
+  /* STATS */
+
+  .stats-grid{
+    grid-template-columns:1fr;
+  }
+
+  .monthly-content{
+    gap:18px;
+  }
+
+  .monthly-content strong{
+    font-size:28px;
+  }
+
+  /* MODAL */
+
+  .edit-modal{
+    padding:16px;
+  }
+
+  .edit-modal-content{
+    max-width:100%;
+    padding:24px 18px;
+  }
+
+  /* TOAST */
+
+  .toast-container{
+    left:14px;
+    right:14px;
+    bottom:16px;
+  }
+
+  .toast{
+    width:100%;
+  }
+
+}
+
+@media(max-width: 600px){
+
+  .admin-page{
+    padding:18px 12px 80px;
+  }
+
+  .admin-header{
+    align-items:center;
+  }
+
+  .admin-logo{
+    width:82px;
+  }
+
+  .admin-header h1{
+    font-size:21px;
+  }
+
+  .back-home-btn{
+    font-size:18px;
+  }
+
+  .admin-tab{
+    height:40px;
+    padding:0 14px;
+    font-size:13px;
+  }
+
+  .products-top p,
+  .orders-count{
+    font-size:14px;
+  }
+
+  .new-product-btn{
+    height:42px;
+    font-size:14px;
+  }
+
+  /* PEDIDOS */
+
+  .order-card{
+    padding:16px;
+  }
+
+  .order-card h3{
+    font-size:15px;
+  }
+
+  .order-customer,
+  .order-items{
+    font-size:13px;
+  }
+
+  .order-total{
+    font-size:15px;
+  }
+
+  /* CARDS */
+
+  .stat-card{
+    height:130px;
+  }
+
+  .stat-card h2{
+    font-size:24px;
+  }
+
+  .monthly-card,
+  .today-orders-card{
+    padding:18px;
+  }
+
+  .monthly-content{
+    flex-direction:column;
+  }
+
+  .monthly-content button{
+    display:none;
+  }
+
+  .monthly-content h4{
+    font-size:18px;
+  }
+
+  .monthly-content strong{
+    font-size:26px;
+  }
+
+  /* MODAL */
+
+  .edit-modal-content h2{
+    font-size:22px;
+  }
+
+  .edit-form input{
+    height:44px;
+  }
+
+  .edit-form button{
+    height:46px;
+  }
+
+}
+
+@media(max-width: 420px){
+
+  .admin-header h1{
+    font-size:19px;
+  }
+
+  .admin-logo{
+    width:74px;
+  }
+
+  .admin-tab{
+    font-size:12px;
+  }
+
+  .order-filter{
+    height:34px;
+    font-size:12px;
+    padding:0 12px;
+  }
+
+  .toast{
+    min-height:66px;
+  }
+
 }

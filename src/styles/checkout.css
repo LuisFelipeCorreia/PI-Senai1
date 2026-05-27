@@ -550,3 +550,268 @@ body.dark .money-info{
 
   padding:10px;
 }
+
+/* =========================
+   RESPONSIVO CHECKOUT
+========================= */
+
+@media(max-width: 768px){
+
+  body{
+    padding:16px;
+    min-height:100vh;
+  }
+
+  .checkout{
+    width:100%;
+    max-width:420px;
+    margin:0 auto;
+  }
+
+  .back-cart{
+    font-size:13px;
+    margin-bottom:16px;
+  }
+
+  .checkout-title{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:20px;
+  }
+
+  .checkout-title img{
+    width:42px;
+  }
+
+  .checkout-title h1{
+    font-size:24px;
+    line-height:1;
+  }
+
+  .summary-card{
+    width:100%;
+    padding:20px;
+    border-radius:16px;
+    margin-bottom:20px;
+  }
+
+  .summary-card h2,
+  .payment-title{
+    font-size:17px;
+    margin-bottom:14px;
+  }
+
+  .summary-item{
+    padding:12px 0;
+    gap:12px;
+  }
+
+  .summary-item h3{
+    font-size:14px;
+  }
+
+  .summary-item p{
+    font-size:12px;
+  }
+
+  .summary-price{
+    font-size:14px;
+    white-space:nowrap;
+  }
+
+  .summary-total{
+    margin-top:16px;
+    padding-top:14px;
+  }
+
+  .summary-total strong{
+    font-size:16px;
+  }
+
+  .summary-total span{
+    font-size:22px;
+  }
+
+  .payments{
+    gap:10px;
+  }
+
+  .payment-option{
+    width:100%;
+    min-height:68px;
+
+    padding:14px;
+
+    border-radius:14px;
+
+    gap:12px;
+
+    align-items:center;
+  }
+
+  .payment-icon{
+    width:42px;
+    height:42px;
+
+    min-width:42px;
+
+    font-size:18px;
+  }
+
+  .payment-option strong{
+    font-size:14px;
+  }
+
+  .payment-option p{
+    font-size:12px;
+  }
+
+  .pay-btn{
+    width:100%;
+    height:54px;
+
+    margin-top:22px;
+
+    border-radius:14px;
+
+    font-size:15px;
+  }
+
+  /* MODAL */
+
+  .payment-modal{
+    padding:14px;
+  }
+
+  .payment-modal-content{
+    width:100%;
+    max-width:100%;
+
+    padding:22px;
+
+    border-radius:18px;
+  }
+
+  .modal-title{
+    font-size:22px;
+    padding-right:30px;
+  }
+
+  .modal-close{
+    top:14px;
+    right:14px;
+  }
+
+  .real-qr{
+    width:190px;
+    height:190px;
+  }
+
+  .qr-box{
+    width:170px;
+    height:170px;
+  }
+
+  .pix-code{
+    font-size:12px;
+    padding:10px;
+  }
+
+  .card-form{
+    gap:10px;
+  }
+
+  .card-form input{
+    height:44px;
+    font-size:13px;
+  }
+
+  .money-info{
+    font-size:14px;
+  }
+
+  .confirm-payment-btn,
+  .copy-pix-btn{
+    height:44px;
+    font-size:14px;
+  }
+
+  /* TOAST */
+
+  .toast-container{
+    left:14px;
+    right:14px;
+    bottom:16px;
+  }
+
+  .toast{
+    width:100%;
+    min-height:68px;
+  }
+
+}
+
+@media(max-width: 480px){
+
+  body{
+    padding:14px;
+  }
+
+  .checkout{
+    max-width:100%;
+  }
+
+  .checkout-title h1{
+    font-size:22px;
+  }
+
+  .checkout-title img{
+    width:38px;
+  }
+
+  .summary-card{
+    padding:18px;
+  }
+
+  .payment-option{
+    padding:12px;
+  }
+
+  .payment-icon{
+    width:40px;
+    height:40px;
+    min-width:40px;
+  }
+
+  .real-qr{
+    width:170px;
+    height:170px;
+  }
+
+}
+
+@media(max-width: 380px){
+
+  .checkout-title h1{
+    font-size:20px;
+  }
+
+  .summary-total span{
+    font-size:20px;
+  }
+
+  .payment-option strong{
+    font-size:13px;
+  }
+
+  .payment-option p{
+    font-size:11px;
+  }
+
+  .pay-btn{
+    height:50px;
+    font-size:14px;
+  }
+
+}

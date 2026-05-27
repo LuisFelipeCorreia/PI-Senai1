@@ -23,6 +23,7 @@ const toastContainer = document.getElementById("toastContainer");
 const editModal = document.getElementById("editModal");
 const closeEditModal = document.getElementById("closeEditModal");
 const editName = document.getElementById("editName");
+const editCategory = document.getElementById("editCategory");
 const editSub = document.getElementById("editSub");
 const editPrice = document.getElementById("editPrice");
 const editImage = document.getElementById("editImage");
@@ -33,8 +34,13 @@ const billingToday = document.getElementById("billingToday");
 const monthlyBilling = document.getElementById("monthlyBilling");
 const todayOrdersList = document.getElementById("todayOrdersList");
 
+const newProductBtn = document.getElementById("newProductBtn");
+
 const orderFilters = document.querySelectorAll(".order-filter");
+
 let currentOrderFilter = "todos";
+let isCreatingProduct = false;
+let currentEditingProduct = null;
 
 /* =========================================
    DADOS
@@ -45,6 +51,7 @@ let orders = JSON.parse(localStorage.getItem("orders")) || [];
 let products = JSON.parse(localStorage.getItem("adminProducts")) || [
   {
     id: 1,
+    category: "lanches",
     name: "X-Burger",
     sub: "Hambúrguer",
     price: 12,
@@ -53,6 +60,7 @@ let products = JSON.parse(localStorage.getItem("adminProducts")) || [
   },
   {
     id: 2,
+    category: "lanches",
     name: "X-Salada",
     sub: "Hambúrguer",
     price: 14,
@@ -61,6 +69,7 @@ let products = JSON.parse(localStorage.getItem("adminProducts")) || [
   },
   {
     id: 3,
+    category: "lanches",
     name: "Misto Quente",
     sub: "Sanduíche",
     price: 8,
@@ -69,6 +78,7 @@ let products = JSON.parse(localStorage.getItem("adminProducts")) || [
   },
   {
     id: 4,
+    category: "lanches",
     name: "Hot Dog",
     sub: "Lanche rápido",
     price: 10,
@@ -78,6 +88,7 @@ let products = JSON.parse(localStorage.getItem("adminProducts")) || [
 
   {
     id: 5,
+    category: "salgados",
     name: "Coxinha",
     sub: "Salgadinho",
     price: 6,
@@ -86,6 +97,7 @@ let products = JSON.parse(localStorage.getItem("adminProducts")) || [
   },
   {
     id: 6,
+    category: "salgados",
     name: "Esfiha",
     sub: "Salgado assado",
     price: 7,
@@ -94,6 +106,7 @@ let products = JSON.parse(localStorage.getItem("adminProducts")) || [
   },
   {
     id: 7,
+    category: "salgados",
     name: "Pastel",
     sub: "Salgado frito",
     price: 8,
@@ -102,6 +115,7 @@ let products = JSON.parse(localStorage.getItem("adminProducts")) || [
   },
   {
     id: 8,
+    category: "salgados",
     name: "Pão de Queijo",
     sub: "Salgado assado",
     price: 5,
@@ -111,6 +125,7 @@ let products = JSON.parse(localStorage.getItem("adminProducts")) || [
 
   {
     id: 9,
+    category: "bebidas",
     name: "Suco Natural",
     sub: "Bebida gelada",
     price: 7,
@@ -119,6 +134,7 @@ let products = JSON.parse(localStorage.getItem("adminProducts")) || [
   },
   {
     id: 10,
+    category: "bebidas",
     name: "Água Mineral",
     sub: "Bebida",
     price: 3,
@@ -127,6 +143,7 @@ let products = JSON.parse(localStorage.getItem("adminProducts")) || [
   },
   {
     id: 11,
+    category: "bebidas",
     name: "Refrigerante",
     sub: "Bebida gelada",
     price: 6,
@@ -135,6 +152,7 @@ let products = JSON.parse(localStorage.getItem("adminProducts")) || [
   },
   {
     id: 12,
+    category: "bebidas",
     name: "Achocolatado",
     sub: "Bebida láctea",
     price: 5,
@@ -144,6 +162,7 @@ let products = JSON.parse(localStorage.getItem("adminProducts")) || [
 
   {
     id: 13,
+    category: "doces",
     name: "Bolo de Chocolate",
     sub: "Bolo",
     price: 7,
@@ -152,6 +171,7 @@ let products = JSON.parse(localStorage.getItem("adminProducts")) || [
   },
   {
     id: 14,
+    category: "doces",
     name: "Brigadeiro",
     sub: "Docinho",
     price: 3,
@@ -160,6 +180,7 @@ let products = JSON.parse(localStorage.getItem("adminProducts")) || [
   },
   {
     id: 15,
+    category: "doces",
     name: "Bala Sortida",
     sub: "Bala",
     price: 2,
@@ -168,6 +189,7 @@ let products = JSON.parse(localStorage.getItem("adminProducts")) || [
   },
   {
     id: 16,
+    category: "doces",
     name: "Brownie",
     sub: "Sobremesa",
     price: 8,
@@ -177,6 +199,7 @@ let products = JSON.parse(localStorage.getItem("adminProducts")) || [
 
   {
     id: 17,
+    category: "combos",
     name: "Combo Lanche",
     sub: "Lanche + Bebida",
     price: 18,
@@ -185,6 +208,7 @@ let products = JSON.parse(localStorage.getItem("adminProducts")) || [
   },
   {
     id: 18,
+    category: "combos",
     name: "Combo Salgado",
     sub: "Salgado + Suco",
     price: 12,
@@ -193,6 +217,7 @@ let products = JSON.parse(localStorage.getItem("adminProducts")) || [
   },
   {
     id: 19,
+    category: "combos",
     name: "Combo Doce",
     sub: "Doce + Bebida",
     price: 10,
@@ -202,6 +227,7 @@ let products = JSON.parse(localStorage.getItem("adminProducts")) || [
 
   {
     id: 20,
+    category: "sorvetes",
     name: "Sorvete de Chocolate",
     sub: "Sorvete",
     price: 6,
@@ -210,6 +236,7 @@ let products = JSON.parse(localStorage.getItem("adminProducts")) || [
   },
   {
     id: 21,
+    category: "sorvetes",
     name: "Picolé de Fruta",
     sub: "Picolé",
     price: 4,
@@ -218,6 +245,7 @@ let products = JSON.parse(localStorage.getItem("adminProducts")) || [
   },
   {
     id: 22,
+    category: "sorvetes",
     name: "Açaí no Copo",
     sub: "Gelado",
     price: 12,
@@ -225,8 +253,6 @@ let products = JSON.parse(localStorage.getItem("adminProducts")) || [
     active: true,
   },
 ];
-
-let currentEditingProduct = null;
 
 /* =========================================
    HELPERS
@@ -237,7 +263,7 @@ function saveProducts() {
 }
 
 function formatPrice(value) {
-  return `R$ ${value.toFixed(2).replace(".", ",")}`;
+  return `R$ ${Number(value).toFixed(2).replace(".", ",")}`;
 }
 
 /* =========================================
@@ -252,8 +278,8 @@ function showToast(type, title, message) {
     type === "error"
       ? "fa-circle-xmark"
       : type === "warning"
-        ? "fa-triangle-exclamation"
-        : "fa-circle-check";
+      ? "fa-triangle-exclamation"
+      : "fa-circle-check";
 
   toast.innerHTML = `
     <i class="fa-solid ${icon}"></i>
@@ -319,7 +345,13 @@ adminTabs.forEach((tab) => {
   });
 });
 
+/* =========================================
+   ESTATÍSTICAS
+========================================= */
+
 function renderStats() {
+  orders = JSON.parse(localStorage.getItem("orders")) || [];
+
   const today = new Date().toLocaleDateString("pt-BR");
 
   const todayOrders = orders.filter((order) => {
@@ -327,11 +359,11 @@ function renderStats() {
   });
 
   const totalToday = todayOrders.reduce((sum, order) => {
-    return sum + order.total;
+    return sum + Number(order.total);
   }, 0);
 
   const totalMonth = orders.reduce((sum, order) => {
-    return sum + order.total;
+    return sum + Number(order.total);
   }, 0);
 
   ordersToday.innerText = todayOrders.length;
@@ -350,18 +382,18 @@ function renderStats() {
   todayOrdersList.innerHTML = todayOrders
     .map((order) => {
       return `
-      <div class="order-card">
-        <div>
-          <h3>Pedido #${order.id}</h3>
-          <p>${order.customer}</p>
-          <strong>${formatPrice(order.total)}</strong>
-        </div>
+        <div class="order-card">
+          <div>
+            <h3>Pedido #${order.id}</h3>
+            <p>${order.customer} — ${order.createdTime || "--:--"}</p>
+            <strong>${formatPrice(order.total)}</strong>
+          </div>
 
-        <span class="order-status ${order.status === "Pronto" ? "done" : "pending"}">
-          ${order.status}
-        </span>
-      </div>
-    `;
+          <span class="order-status ${order.status === "Pronto" ? "done" : "pending"}">
+            ${order.status}
+          </span>
+        </div>
+      `;
     })
     .join("");
 }
@@ -383,13 +415,13 @@ function renderOrders() {
 
   if (pendingOrders) {
     pendingOrders.innerText = orders.filter(
-      (order) => order.status === "A Fazer",
+      (order) => order.status === "A Fazer"
     ).length;
   }
 
   if (doneOrders) {
     doneOrders.innerText = orders.filter(
-      (order) => order.status === "Pronto",
+      (order) => order.status === "Pronto"
     ).length;
   }
 
@@ -397,7 +429,7 @@ function renderOrders() {
 
   if (currentOrderFilter !== "todos") {
     filteredOrders = orders.filter(
-      (order) => order.status === currentOrderFilter,
+      (order) => order.status === currentOrderFilter
     );
   }
 
@@ -421,31 +453,31 @@ function renderOrders() {
         .join(", ");
 
       return `
-      <div class="order-card">
-        <div class="order-info">
-          <h3>Pedido #${order.id}</h3>
+        <div class="order-card">
+          <div class="order-info">
+            <h3>Pedido #${order.id}</h3>
 
-          <p class="order-customer">
-            ${order.customer} — ${order.createdAt} às ${order.createdTime || "--:--"}
-          </p>
+            <p class="order-customer">
+              ${order.customer} — ${order.createdAt} às ${order.createdTime || "--:--"}
+            </p>
 
-          <p class="order-items">
-            ${itemsText}
-          </p>
+            <p class="order-items">
+              ${itemsText}
+            </p>
 
-          <strong class="order-total">
-            ${formatPrice(order.total)}
-          </strong>
+            <strong class="order-total">
+              ${formatPrice(order.total)}
+            </strong>
+          </div>
+
+          <button
+            class="order-status-btn ${order.status === "Pronto" ? "done" : "pending"}"
+            onclick="toggleOrderStatus(${order.id})"
+          >
+            ${order.status}
+          </button>
         </div>
-
-        <button
-          class="order-status-btn ${order.status === "Pronto" ? "done" : "pending"}"
-          onclick="toggleOrderStatus(${order.id})"
-        >
-          ${order.status}
-        </button>
-      </div>
-    `;
+      `;
     })
     .join("");
 }
@@ -481,7 +513,7 @@ function toggleOrderStatus(id) {
   showToast(
     "success",
     "Status atualizado!",
-    `Pedido #${order.id} agora está ${order.status}`,
+    `Pedido #${order.id} agora está ${order.status}`
   );
 }
 
@@ -501,82 +533,78 @@ function renderProducts() {
       <div class="empty-orders">
         <i class="fa-solid fa-box-open"></i>
 
-        <h3>
-          Nenhum produto cadastrado
-        </h3>
+        <h3>Nenhum produto cadastrado</h3>
       </div>
     `;
-
     return;
   }
 
   productsAdminGrid.innerHTML = products
     .map((product) => {
       return `
-      <div class="admin-product-row">
+        <div class="admin-product-row">
+          <div class="product-name-cell">
+            <img
+              src="${product.image}"
+              alt="${product.name}"
+            >
 
-        <div class="product-name-cell">
+            <span>
+              ${product.name}
+            </span>
+          </div>
 
-          <img
-            src="${product.image}"
-            alt="${product.name}"
-          >
-
-          <span>
-            ${product.name}
+          <span class="product-category">
+            ${product.sub}
           </span>
 
+          <span class="product-price">
+            ${formatPrice(product.price)}
+          </span>
+
+          <span class="product-status ${product.active ? "active" : "off"}">
+            <button
+              class="switch-product"
+              onclick="toggleProductStatus(${product.id})"
+            >
+              <span></span>
+            </button>
+          </span>
+
+          <div class="product-actions">
+            <button
+              class="edit-product"
+              onclick="openEditProduct(${product.id})"
+            >
+              <i class="fa-solid fa-pen"></i>
+            </button>
+
+            <button
+              class="delete-product"
+              onclick="deleteProduct(${product.id})"
+            >
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </div>
         </div>
-
-        <span class="product-category">
-          ${product.sub}
-        </span>
-
-        <span class="product-price">
-          ${formatPrice(product.price)}
-        </span>
-
-        <span class="product-status ${product.active ? "active" : "off"}">
-          <button
-            class="switch-product"
-            onclick="toggleProductStatus(${product.id})"
-          >
-            <span></span>
-          </button>
-        </span>
-
-        <div class="product-actions">
-
-          <button
-            class="edit-product"
-            onclick="openEditProduct(${product.id})"
-          >
-            <i class="fa-solid fa-pen"></i>
-          </button>
-
-          <button
-            class="delete-product"
-            onclick="deleteProduct(${product.id})"
-          >
-            <i class="fa-solid fa-trash"></i>
-          </button>
-
-        </div>
-
-      </div>
-    `;
+      `;
     })
     .join("");
 }
 
 function openEditProduct(id) {
-  const product = products.find((product) => product.id === id);
+  isCreatingProduct = false;
+
+  const product = products.find((product) => {
+    return product.id === id;
+  });
 
   if (!product) return;
 
   currentEditingProduct = product;
 
   editName.value = product.name;
+  editCategory.value = product.category || "lanches";
   editSub.value = product.sub;
   editPrice.value = product.price;
   editImage.value = product.image;
@@ -584,24 +612,73 @@ function openEditProduct(id) {
   editModal.classList.add("active");
 }
 
-saveEditBtn.addEventListener("click", () => {
-  if (!currentEditingProduct) return;
+newProductBtn.addEventListener("click", () => {
+  isCreatingProduct = true;
+  currentEditingProduct = null;
 
-  currentEditingProduct.name = editName.value;
-  currentEditingProduct.sub = editSub.value;
-  currentEditingProduct.price = Number(editPrice.value);
-  currentEditingProduct.image = editImage.value;
+  editName.value = "";
+  editCategory.value = "lanches";
+  editSub.value = "";
+  editPrice.value = "";
+  editImage.value = "";
+
+  editModal.classList.add("active");
+});
+
+saveEditBtn.addEventListener("click", () => {
+  if (editName.value.trim() === "" || editPrice.value.trim() === "") {
+    showToast(
+      "error",
+      "Campos obrigatórios!",
+      "Preencha pelo menos nome e preço"
+    );
+    return;
+  }
+
+  if (isCreatingProduct) {
+    products.push({
+      id: Date.now(),
+      category: editCategory.value,
+      name: editName.value,
+      sub: editSub.value || "Sem categoria",
+      price: Number(editPrice.value),
+      image: editImage.value || "/img/food-icon.png",
+      active: true,
+    });
+
+    showToast(
+      "success",
+      "Produto criado!",
+      "Novo produto adicionado ao cardápio"
+    );
+  } else {
+    if (!currentEditingProduct) return;
+
+    currentEditingProduct.name = editName.value;
+    currentEditingProduct.category = editCategory.value;
+    currentEditingProduct.sub = editSub.value;
+    currentEditingProduct.price = Number(editPrice.value);
+    currentEditingProduct.image = editImage.value;
+
+    showToast(
+      "info",
+      "Produto editado!",
+      "Alterações salvas corretamente"
+    );
+  }
 
   saveProducts();
   renderProducts();
 
   editModal.classList.remove("active");
-
-  showToast("info", "Produto editado!", "Alterações salvas corretamente");
+  isCreatingProduct = false;
+  currentEditingProduct = null;
 });
 
 function toggleProductStatus(id) {
-  const product = products.find((product) => product.id === id);
+  const product = products.find((product) => {
+    return product.id === id;
+  });
 
   if (!product) return;
 
@@ -615,21 +692,29 @@ function toggleProductStatus(id) {
     "Status alterado!",
     product.active
       ? "Produto ativado para venda"
-      : "Produto desativado para venda",
+      : "Produto desativado para venda"
   );
 }
 
 function deleteProduct(id) {
-  const product = products.find((product) => product.id === id);
+  const product = products.find((product) => {
+    return product.id === id;
+  });
 
   if (!product) return;
 
-  products = products.filter((product) => product.id !== id);
+  products = products.filter((product) => {
+    return product.id !== id;
+  });
 
   saveProducts();
   renderProducts();
 
-  showToast("error", "Produto excluído!", `${product.name} foi removido`);
+  showToast(
+    "error",
+    "Produto excluído!",
+    `${product.name} foi removido`
+  );
 }
 
 closeEditModal.addEventListener("click", () => {
@@ -665,7 +750,4 @@ if (localStorage.getItem("theme") === "dark") {
 saveProducts();
 renderProducts();
 renderOrders();
-
-if (typeof renderStats === "function") {
-  renderStats();
-}
+renderStats();

@@ -266,10 +266,10 @@ function openCategory(category) {
   `;
 
   pageDescription.innerHTML = `
-    <img src="img/seta.png" class="subtitle-arrow left-arrow" />
-    Escolha os produtos da categoria ${category}
-    <img src="img/seta.png" class="subtitle-arrow" />
-  `;
+  <img src="/img/seta.png" class="subtitle-arrow left-arrow" />
+  Escolha os produtos da categoria ${category}
+  <img src="/img/seta.png" class="subtitle-arrow" />
+`;
 
   categoryTitle.innerText =
     category.charAt(0).toUpperCase() + category.slice(1);
@@ -292,62 +292,79 @@ function backHome() {
   `;
 
   pageDescription.innerHTML = `
-    <img src="img/seta.png" class="subtitle-arrow left-arrow" />
-    Escolha através das categorias abaixo e faça seu pedido!
-    <img src="img/seta.png" class="subtitle-arrow" />
-  `;
+  <img src="/img/seta.png" class="subtitle-arrow left-arrow" />
+  Escolha através das categorias abaixo e faça seu pedido!
+  <img src="/img/seta.png" class="subtitle-arrow" />
+`;
 }
 
 searchBox.style.display = "none";
 
 function renderProducts(category, searchTerm = "") {
-  const adminProducts = JSON.parse(localStorage.getItem("adminProducts")) || [];
+  const adminProducts =
+    JSON.parse(localStorage.getItem("adminProducts")) || [];
 
-  let products = menuProducts[category] || [];
+  const baseProducts =
+    menuProducts[category] || [];
 
-  if (adminProducts.length > 0) {
-    products = products.map((product) => {
-      const savedProduct = adminProducts.find((item) => item.id === product.id);
-
-      return savedProduct || product;
+  let products = baseProducts.map((baseProduct) => {
+    const updatedProduct = adminProducts.find((adminProduct) => {
+      return adminProduct.id === baseProduct.id;
     });
 
-    products = products.filter((product) => {
-      return product.active !== false;
+    return updatedProduct || baseProduct;
+  });
+
+  const newProducts = adminProducts.filter((adminProduct) => {
+    const existsInBase = baseProducts.some((baseProduct) => {
+      return baseProduct.id === adminProduct.id;
     });
-  }
+
+    return adminProduct.category === category && !existsInBase;
+  });
+
+  products = [...products, ...newProducts];
+
+  products = products.filter((product) => {
+    return product.active !== false;
+  });
 
   const filteredProducts = products.filter((product) => {
     return product.name.toLowerCase().includes(searchTerm.toLowerCase());
   });
 
+  if (filteredProducts.length === 0) {
+    productsGrid.innerHTML = `
+      <p class="no-products">
+        Nenhum produto encontrado.
+      </p>
+    `;
+    return;
+  }
+
   productsGrid.innerHTML = filteredProducts
     .map((product) => {
       return `
-      <div class="product-card">
-        <img src="${product.image}" alt="${product.name}">
+        <div class="product-card">
+          <img src="${product.image}" alt="${product.name}">
 
-        <span class="product-sub">
-          ${product.sub}
-        </span>
+          <span class="product-sub">
+            ${product.sub}
+          </span>
 
-        <h3>${product.name}</h3>
+          <h3>${product.name}</h3>
 
-        <p>
-          R$ ${product.price.toFixed(2).replace(".", ",")}
-        </p>
+          <p>
+            R$ ${Number(product.price).toFixed(2).replace(".", ",")}
+          </p>
 
-        ${
-          userType === "admin"
-            ? `<button onclick="openEditModal(${product.id})">
-    Editar
-  </button>`
-            : `<button onclick="addToCart('${product.name}', ${product.price})">
-    Adicionar
-  </button>`
-        }
-      </div>
-    `;
+          ${
+            userType === "admin"
+              ? `<button onclick="openEditModal(${product.id})">Editar</button>`
+              : `<button onclick="addToCart('${product.name}', ${product.price})">Adicionar</button>`
+          }
+        </div>
+      `;
     })
     .join("");
 }
