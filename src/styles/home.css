@@ -246,6 +246,93 @@ body {
   background: #8a2cff;
 }
 
+.edit-modal-content{
+  width: 100%;
+  max-width: 460px;
+
+  background: white;
+  border-radius: 22px;
+
+  padding: 28px;
+
+  position: relative;
+}
+
+.edit-modal-content h2{
+  font-family: "Anton", sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+
+  margin-bottom: 20px;
+}
+
+.edit-form{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.edit-form label{
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.edit-form input{
+  height: 46px;
+
+  border: 1px solid #ddd;
+  border-radius: 12px;
+
+  padding: 0 14px;
+
+  font-family: "Poppins", sans-serif;
+}
+
+.edit-form button{
+  height: 46px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: #e30613;
+  color: white;
+
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.modal-close{
+  position: absolute;
+  top: 14px;
+  right: 14px;
+
+  width: 36px;
+  height: 36px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #f1f1f1;
+
+  cursor: pointer;
+}
+
+body.dark .edit-modal-content{
+  background: #1a1a1a;
+  color: white;
+}
+
+body.dark .edit-form input{
+  background: #212121;
+  color: white;
+  border-color: #333;
+}
+
+body.dark .modal-close{
+  background: #252525;
+  color: white;
+}
+
 /* CARD */
 .category-card {
   width: 420px;
@@ -1045,6 +1132,15 @@ body.dark .cart-controls {
     flex-direction: column;
     align-items: flex-start;
     gap: 14px;
+  }
+
+    .edit-modal{
+    padding: 16px;
+  }
+
+  .edit-modal-content{
+    max-width: 100%;
+    padding: 24px 18px;
   }
 
   .logo-area {

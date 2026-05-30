@@ -55,7 +55,7 @@ let products = JSON.parse(localStorage.getItem("adminProducts")) || [
     name: "X-Burger",
     sub: "Hambúrguer",
     price: 12,
-    image: "img/produtos/xburger.png",
+    image: "/img/teste.png",
     active: true,
   },
   {
@@ -64,7 +64,7 @@ let products = JSON.parse(localStorage.getItem("adminProducts")) || [
     name: "X-Salada",
     sub: "Hambúrguer",
     price: 14,
-    image: "img/produtos/xsalada.png",
+    image: "/img/teste.png",
     active: true,
   },
   {
@@ -73,7 +73,7 @@ let products = JSON.parse(localStorage.getItem("adminProducts")) || [
     name: "Misto Quente",
     sub: "Sanduíche",
     price: 8,
-    image: "img/produtos/misto.png",
+    image: "/img/teste.png",
     active: true,
   },
   {
@@ -82,7 +82,7 @@ let products = JSON.parse(localStorage.getItem("adminProducts")) || [
     name: "Hot Dog",
     sub: "Lanche rápido",
     price: 10,
-    image: "img/produtos/hotdog.png",
+    image: "/img/teste.png",
     active: true,
   },
 
@@ -92,7 +92,7 @@ let products = JSON.parse(localStorage.getItem("adminProducts")) || [
     name: "Coxinha",
     sub: "Salgadinho",
     price: 6,
-    image: "img/produtos/coxinha.png",
+    image: "/img/teste.png",
     active: true,
   },
   {
@@ -101,7 +101,7 @@ let products = JSON.parse(localStorage.getItem("adminProducts")) || [
     name: "Esfiha",
     sub: "Salgado assado",
     price: 7,
-    image: "img/produtos/esfiha.png",
+    image: "/img/teste.png",
     active: true,
   },
   {
@@ -110,7 +110,7 @@ let products = JSON.parse(localStorage.getItem("adminProducts")) || [
     name: "Pastel",
     sub: "Salgado frito",
     price: 8,
-    image: "img/produtos/pastel.png",
+    image: "/img/teste.png",
     active: true,
   },
   {
@@ -119,7 +119,7 @@ let products = JSON.parse(localStorage.getItem("adminProducts")) || [
     name: "Pão de Queijo",
     sub: "Salgado assado",
     price: 5,
-    image: "img/produtos/pao-queijo.png",
+    image: "/img/teste.png",
     active: true,
   },
 
@@ -129,7 +129,7 @@ let products = JSON.parse(localStorage.getItem("adminProducts")) || [
     name: "Suco Natural",
     sub: "Bebida gelada",
     price: 7,
-    image: "img/produtos/suco.png",
+    image: "/img/teste.png",
     active: true,
   },
   {
@@ -138,7 +138,7 @@ let products = JSON.parse(localStorage.getItem("adminProducts")) || [
     name: "Água Mineral",
     sub: "Bebida",
     price: 3,
-    image: "img/produtos/agua.png",
+    image: "/img/teste.png",
     active: true,
   },
   {
@@ -147,7 +147,7 @@ let products = JSON.parse(localStorage.getItem("adminProducts")) || [
     name: "Refrigerante",
     sub: "Bebida gelada",
     price: 6,
-    image: "img/produtos/refrigerante.png",
+    image: "/img/teste.png",
     active: true,
   },
   {
@@ -156,7 +156,7 @@ let products = JSON.parse(localStorage.getItem("adminProducts")) || [
     name: "Achocolatado",
     sub: "Bebida láctea",
     price: 5,
-    image: "img/produtos/achocolatado.png",
+    image: "/img/teste.png",
     active: true,
   },
 
@@ -166,7 +166,7 @@ let products = JSON.parse(localStorage.getItem("adminProducts")) || [
     name: "Bolo de Chocolate",
     sub: "Bolo",
     price: 7,
-    image: "img/produtos/bolo-chocolate.png",
+    image: "/img/teste.png",
     active: true,
   },
   {
@@ -175,7 +175,7 @@ let products = JSON.parse(localStorage.getItem("adminProducts")) || [
     name: "Brigadeiro",
     sub: "Docinho",
     price: 3,
-    image: "img/produtos/brigadeiro.png",
+    image: "/img/teste.png",
     active: true,
   },
   {
@@ -184,7 +184,7 @@ let products = JSON.parse(localStorage.getItem("adminProducts")) || [
     name: "Bala Sortida",
     sub: "Bala",
     price: 2,
-    image: "img/produtos/balas.png",
+    image: "/img/teste.png",
     active: true,
   },
   {
@@ -193,7 +193,7 @@ let products = JSON.parse(localStorage.getItem("adminProducts")) || [
     name: "Brownie",
     sub: "Sobremesa",
     price: 8,
-    image: "img/produtos/brownie.png",
+    image: "/img/teste.png",
     active: true,
   },
 
@@ -203,7 +203,7 @@ let products = JSON.parse(localStorage.getItem("adminProducts")) || [
     name: "Combo Lanche",
     sub: "Lanche + Bebida",
     price: 18,
-    image: "img/produtos/combo-lanche.png",
+    image: "/img/teste.png",
     active: true,
   },
   {
@@ -212,7 +212,7 @@ let products = JSON.parse(localStorage.getItem("adminProducts")) || [
     name: "Combo Salgado",
     sub: "Salgado + Suco",
     price: 12,
-    image: "img/produtos/combo-salgado.png",
+    image: "/img/teste.png",
     active: true,
   },
   {
@@ -221,7 +221,7 @@ let products = JSON.parse(localStorage.getItem("adminProducts")) || [
     name: "Combo Doce",
     sub: "Doce + Bebida",
     price: 10,
-    image: "img/produtos/combo-doce.png",
+    image: "/img/teste.png",
     active: true,
   },
 
@@ -231,7 +231,7 @@ let products = JSON.parse(localStorage.getItem("adminProducts")) || [
     name: "Sorvete de Chocolate",
     sub: "Sorvete",
     price: 6,
-    image: "img/produtos/sorvete-chocolate.png",
+    image: "/img/teste.png",
     active: true,
   },
   {
@@ -240,7 +240,7 @@ let products = JSON.parse(localStorage.getItem("adminProducts")) || [
     name: "Picolé de Fruta",
     sub: "Picolé",
     price: 4,
-    image: "img/produtos/picole.png",
+    image: "/img/teste.png",
     active: true,
   },
   {
@@ -249,7 +249,7 @@ let products = JSON.parse(localStorage.getItem("adminProducts")) || [
     name: "Açaí no Copo",
     sub: "Gelado",
     price: 12,
-    image: "img/produtos/acai.png",
+    image: "/img/teste.png",
     active: true,
   },
 ];
