@@ -85,6 +85,7 @@ const menuProducts = {
   ],
 };
 
+
 /* =========================
    TOAST
 ========================= */
@@ -169,11 +170,9 @@ function backHome() {
 searchBox.style.display = "none";
 
 function renderProducts(category, searchTerm = "") {
-  const adminProducts =
-    JSON.parse(localStorage.getItem("adminProducts")) || [];
+  const adminProducts = JSON.parse(localStorage.getItem("adminProducts")) || [];
 
-  const baseProducts =
-    menuProducts[category] || [];
+  const baseProducts = menuProducts[category] || [];
 
   let products = baseProducts.map((baseProduct) => {
     const updatedProduct = adminProducts.find((adminProduct) => {
