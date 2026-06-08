@@ -208,9 +208,7 @@ function finishPayment() {
     total: total,
     payment: selectedPayment,
     status: "A Fazer",
-
     createdAt: new Date().toLocaleDateString("pt-BR"),
-
     createdTime: new Date().toLocaleTimeString("pt-BR", {
       hour: "2-digit",
       minute: "2-digit",

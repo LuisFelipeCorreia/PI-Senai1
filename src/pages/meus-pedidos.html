@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>SESI - Alimentação</title>
+
+  <link rel="icon" href="/img/food-icon.png" type="image/png" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="../styles/meus-pedidos.css" />
+</head>
+
+<body>
+  <main class="orders-page">
+    <header class="orders-header">
+      <button id="backHomeBtn">
+        <i class="fa-solid fa-arrow-left"></i>
+      </button>
+
+      <div>
+        <h1>MEUS PEDIDOS</h1>
+        <p>Acompanhe o status dos seus pedidos</p>
+      </div>
+    </header>
+
+    <section class="orders-list" id="myOrdersList"></section>
+  </main>
+
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loader-wrapper">
+      <div class="loader-ring"></div>
+
+      <div class="loader-logo">
+        <img src="/img/food-icon.png" alt="Logo" />
+      </div>
+    </div>
+
+    <p class="loading-text">Carregando . . .</p>
+  </div>
+
+  <script src="../js/meus-pedidos.js"></script>
+</body>
+</html>

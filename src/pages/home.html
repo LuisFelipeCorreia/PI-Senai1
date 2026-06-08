@@ -42,7 +42,7 @@
 
       <!-- AÇÕES -->
       <div class="header-actions">
-        <div class="user-area">
+        <div class="user-area" id="myOrdersBtn">
           <i class="fa-regular fa-user"></i>
           <span id="userName"></span>
         </div>
@@ -161,30 +161,30 @@
     </aside>
 
     <div class="edit-modal" id="editModal">
-        <div class="edit-modal-content">
-          <button class="modal-close" id="closeEditModal">
-            <i class="fa-solid fa-xmark"></i>
-          </button>
+      <div class="edit-modal-content">
+        <button class="modal-close" id="closeEditModal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
 
-          <h2>EDITAR PRODUTO</h2>
+        <h2>EDITAR PRODUTO</h2>
 
-          <form class="edit-form">
-            <label>Nome do produto</label>
-            <input type="text" id="editName" />
+        <form class="edit-form">
+          <label>Nome do produto</label>
+          <input type="text" id="editName" />
 
-            <label>Subcategoria</label>
-            <input type="text" id="editSub" />
+          <label>Subcategoria</label>
+          <input type="text" id="editSub" />
 
-            <label>Preço</label>
-            <input type="number" id="editPrice" step="0.01" />
+          <label>Preço</label>
+          <input type="number" id="editPrice" step="0.01" />
 
-            <label>Imagem</label>
-            <input type="text" id="editImage" />
+          <label>Imagem</label>
+          <input type="text" id="editImage" />
 
-            <button type="button" id="saveEditBtn">Salvar alterações</button>
-          </form>
-        </div>
+          <button type="button" id="saveEditBtn">Salvar alterações</button>
+        </form>
       </div>
+    </div>
 
     <!-- LOADING -->
     <div class="loading-screen" id="loadingScreen">

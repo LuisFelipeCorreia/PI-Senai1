@@ -73,6 +73,22 @@ body {
   text-align: center;
 }
 
+.user-area {
+  padding: 8px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.user-area:hover {
+  background: #eeeeee;
+}
+
+body.dark .user-area:hover {
+  background: #2b2b2b;
+  border-color: #3a3a3a;
+}
+
 /* SETAS */
 .subtitle-arrow {
   width: 24px;
@@ -246,7 +262,7 @@ body {
   background: #8a2cff;
 }
 
-.edit-modal-content{
+.edit-modal-content {
   width: 100%;
   max-width: 460px;
 
@@ -258,7 +274,7 @@ body {
   position: relative;
 }
 
-.edit-modal-content h2{
+.edit-modal-content h2 {
   font-family: "Anton", sans-serif;
   font-size: 28px;
   font-weight: 400;
@@ -266,18 +282,18 @@ body {
   margin-bottom: 20px;
 }
 
-.edit-form{
+.edit-form {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.edit-form label{
+.edit-form label {
   font-size: 13px;
   font-weight: 600;
 }
 
-.edit-form input{
+.edit-form input {
   height: 46px;
 
   border: 1px solid #ddd;
@@ -288,7 +304,7 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-.edit-form button{
+.edit-form button {
   height: 46px;
 
   border: none;
@@ -301,7 +317,7 @@ body {
   cursor: pointer;
 }
 
-.modal-close{
+.modal-close {
   position: absolute;
   top: 14px;
   right: 14px;
@@ -317,18 +333,18 @@ body {
   cursor: pointer;
 }
 
-body.dark .edit-modal-content{
+body.dark .edit-modal-content {
   background: #1a1a1a;
   color: white;
 }
 
-body.dark .edit-form input{
+body.dark .edit-form input {
   background: #212121;
   color: white;
   border-color: #333;
 }
 
-body.dark .modal-close{
+body.dark .modal-close {
   background: #252525;
   color: white;
 }
@@ -817,7 +833,7 @@ body.dark .loader-ring {
 
   color: #3a3a3a;
 
-  font-size: 18px;
+  font-size: 16px;
 
   font-family: "Poppins", sans-serif;
 }
@@ -1134,11 +1150,11 @@ body.dark .cart-controls {
     gap: 14px;
   }
 
-    .edit-modal{
+  .edit-modal {
     padding: 16px;
   }
 
-  .edit-modal-content{
+  .edit-modal-content {
     max-width: 100%;
     padding: 24px 18px;
   }

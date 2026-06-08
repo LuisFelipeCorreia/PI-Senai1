@@ -628,3 +628,11 @@ const userName = document.getElementById("userName");
 if (userName) {
   userName.innerText = localStorage.getItem("userName") || "Usuário";
 }
+
+const myOrdersBtn = document.getElementById("myOrdersBtn");
+
+if (myOrdersBtn) {
+  myOrdersBtn.addEventListener("click", () => {
+    goWithLoading("meus-pedidos.html", "Carregando . . .");
+  });
+}
