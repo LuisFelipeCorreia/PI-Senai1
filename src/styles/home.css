@@ -11,6 +11,11 @@ body {
   transition: 0.3s;
 }
 
+html.dark,
+html.dark body {
+  background: #212121 !important;
+}
+
 /* HEADER */
 .header {
   width: 100%;
@@ -665,7 +670,7 @@ body.dark .no-products {
 }
 
 /* DARK MODE */
-body.dark {
+html.dark body {
   background: #212121;
 }
 
@@ -1390,4 +1395,30 @@ body.dark .cart-controls {
 
     padding: 2px 7px !important;
   }
+}
+
+html.dark,
+html.dark body,
+body.dark{
+  background:#212121 !important;
+}
+
+html.dark .main,
+body.dark .main{
+  background:#212121 !important;
+}
+
+html.dark .section-title,
+body.dark .section-title{
+  color:white !important;
+}
+
+html.dark .categories-description,
+body.dark .categories-description{
+  color:#bdbdbd !important;
+}
+
+html.dark .subtitle-arrow,
+body.dark .subtitle-arrow{
+  filter:brightness(0) invert(1);
 }

@@ -2,10 +2,6 @@ const myOrdersList = document.getElementById("myOrdersList");
 const backHomeBtn = document.getElementById("backHomeBtn");
 const loadingScreen = document.getElementById("loadingScreen");
 
-if(localStorage.getItem("theme") === "dark"){
-  document.body.classList.add("dark");
-}
-
 function formatPrice(value){
   return `R$ ${Number(value).toFixed(2).replace(".", ",")}`;
 }

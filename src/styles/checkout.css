@@ -193,23 +193,32 @@ body{
   cursor:not-allowed;
 }
 
+/* =========================================
+   LOADING PADRÃO DO SISTEMA
+========================================= */
+
 .loading-screen{
   position:fixed;
   inset:0;
   width:100%;
   height:100vh;
+
   background:#f4f4f4;
+
   display:none;
   justify-content:center;
   align-items:center;
   flex-direction:column;
+
   z-index:99999;
 }
 
 .loader-wrapper{
   position:relative;
+
   width:120px;
   height:120px;
+
   display:flex;
   justify-content:center;
   align-items:center;
@@ -217,21 +226,27 @@ body{
 
 .loader-ring{
   position:absolute;
+
   width:110px;
   height:110px;
+
   border-radius:50%;
+
   border:5px solid #d7d7d7;
   border-top:5px solid #ff0000;
   border-right:5px solid #ff0000;
+
   animation:spin .8s linear infinite;
 }
 
 .loader-logo{
   width:62px;
   height:62px;
+
   display:flex;
   justify-content:center;
   align-items:center;
+
   z-index:2;
 }
 
@@ -242,9 +257,30 @@ body{
 
 .loading-text{
   margin-top:18px;
+
   color:#3a3a3a;
-  font-size:18px;
+
+  font-size:16px;
+
   font-family:"Poppins", sans-serif;
+}
+
+/* DARK MODE */
+body.dark .loading-screen,
+html.dark .loading-screen{
+  background:#1f1f1f;
+}
+
+body.dark .loader-ring,
+html.dark .loader-ring{
+  border:5px solid #2e2e2e;
+  border-top:5px solid #ff0000;
+  border-right:5px solid #ff0000;
+}
+
+body.dark .loading-text,
+html.dark .loading-text{
+  color:#d5d5d5;
 }
 
 @keyframes spin{
@@ -255,14 +291,6 @@ body{
   to{
     transform:rotate(360deg);
   }
-}
-
-body.dark .loading-screen{
-  background:#212121;
-}
-
-body.dark .loading-text{
-  color:#d5d5d5;
 }
 
 body.dark{

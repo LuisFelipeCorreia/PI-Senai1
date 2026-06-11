@@ -116,40 +116,61 @@ body{
   color:#ddd;
 }
 
+/* =========================
+   LOADING
+========================= */
+
 .loading-screen{
   position:fixed;
   inset:0;
+
+  width:100%;
+  height:100vh;
+
   background:#f4f4f4;
+
   display:none;
   justify-content:center;
   align-items:center;
   flex-direction:column;
+
   z-index:99999;
 }
 
 .loader-wrapper{
   position:relative;
+
   width:120px;
   height:120px;
+
   display:flex;
-  align-items:center;
   justify-content:center;
+  align-items:center;
 }
 
 .loader-ring{
   position:absolute;
+
   width:110px;
   height:110px;
+
   border-radius:50%;
+
   border:5px solid #d7d7d7;
-  border-top-color:#e30613;
-  border-right-color:#e30613;
+  border-top:5px solid #ff0000;
+  border-right:5px solid #ff0000;
+
   animation:spin .8s linear infinite;
 }
 
 .loader-logo{
   width:62px;
   height:62px;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
   z-index:2;
 }
 
@@ -157,49 +178,90 @@ body{
   width:100%;
 }
 
-.loading-text{
-  margin-top:18px;
-  color:#444;
+.loading-text {
+  margin-top: 18px;
+
+  color: #3a3a3a;
+
+  font-size: 16px;
+
+  font-family: "Poppins", sans-serif;
 }
 
-body.dark{
+/* =========================================
+   DARK MODE
+========================================= */
+
+html.dark,
+html.dark body{
   background:#212121;
   color:white;
 }
 
-body.dark .orders-header p{
+html.dark .orders-header p{
   color:#bdbdbd;
 }
 
-body.dark .order-card{
+html.dark .order-card{
   background:#1a1a1a;
   border-color:#333;
 }
 
-body.dark .order-info,
-body.dark .order-items{
+html.dark .order-info,
+html.dark .order-items{
   color:#bdbdbd;
 }
 
-body.dark .empty-orders{
+html.dark .empty-orders{
   color:#bdbdbd;
 }
 
-body.dark .loading-screen{
-  background:#212121;
+html.dark .empty-orders i{
+  color:#444;
 }
 
-body.dark .loading-text{
+html.dark .order-top h3{
+  color:white;
+}
+
+html.dark .order-total{
+  color:#ff4d57;
+}
+
+html.dark .loading-screen{
+  background:#1f1f1f;
+}
+
+html.dark .loading-text{
   color:#d5d5d5;
 }
 
+html.dark .loader-ring{
+  border:5px solid #2e2e2e;
+  border-top:5px solid #ff0000;
+  border-right:5px solid #ff0000;
+}
+
+/* =========================
+   ANIMAÇÃO
+========================= */
+
 @keyframes spin{
+  from{
+    transform:rotate(0deg);
+  }
+
   to{
     transform:rotate(360deg);
   }
 }
 
+/* =========================
+   RESPONSIVO
+========================= */
+
 @media(max-width:600px){
+
   .orders-header h1{
     font-size:28px;
   }
@@ -212,4 +274,5 @@ body.dark .loading-text{
   .order-card{
     padding:16px;
   }
+
 }

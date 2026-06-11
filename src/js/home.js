@@ -45,46 +45,177 @@ saveCart();
 
 const menuProducts = {
   lanches: [
-    { id: 1, name: "X-Burger", sub: "Hambúrguer", price: 12, image: "/img/teste.png" },
-    { id: 2, name: "X-Salada", sub: "Hambúrguer", price: 14, image: "/img/teste.png" },
-    { id: 3, name: "Misto Quente", sub: "Sanduíche", price: 8, image: "/img/teste.png" },
-    { id: 4, name: "Hot Dog", sub: "Lanche rápido", price: 10, image: "/img/teste.png" },
+    {
+      id: 1,
+      name: "X-Burger",
+      sub: "Hambúrguer",
+      price: 12,
+      image: "/img/teste.png",
+    },
+    {
+      id: 2,
+      name: "X-Salada",
+      sub: "Hambúrguer",
+      price: 14,
+      image: "/img/teste.png",
+    },
+    {
+      id: 3,
+      name: "Misto Quente",
+      sub: "Sanduíche",
+      price: 8,
+      image: "/img/teste.png",
+    },
+    {
+      id: 4,
+      name: "Hot Dog",
+      sub: "Lanche rápido",
+      price: 10,
+      image: "/img/teste.png",
+    },
   ],
 
   salgados: [
-    { id: 5, name: "Coxinha", sub: "Salgadinho", price: 6, image: "/img/teste.png" },
-    { id: 6, name: "Esfiha", sub: "Salgado assado", price: 7, image: "/img/teste.png" },
-    { id: 7, name: "Pastel", sub: "Salgado frito", price: 8, image: "/img/teste.png" },
-    { id: 8, name: "Pão de Queijo", sub: "Salgado assado", price: 5, image: "/img/teste.png" },
+    {
+      id: 5,
+      name: "Coxinha",
+      sub: "Salgadinho",
+      price: 6,
+      image: "/img/teste.png",
+    },
+    {
+      id: 6,
+      name: "Esfiha",
+      sub: "Salgado assado",
+      price: 7,
+      image: "/img/teste.png",
+    },
+    {
+      id: 7,
+      name: "Pastel",
+      sub: "Salgado frito",
+      price: 8,
+      image: "/img/teste.png",
+    },
+    {
+      id: 8,
+      name: "Pão de Queijo",
+      sub: "Salgado assado",
+      price: 5,
+      image: "/img/teste.png",
+    },
   ],
 
   bebidas: [
-    { id: 9, name: "Suco Natural", sub: "Bebida gelada", price: 7, image: "/img/teste.png" },
-    { id: 10, name: "Água Mineral", sub: "Bebida", price: 3, image: "/img/teste.png" },
-    { id: 11, name: "Refrigerante", sub: "Bebida gelada", price: 6, image: "/img/teste.png" },
-    { id: 12, name: "Achocolatado", sub: "Bebida láctea", price: 5, image: "/img/teste.png" },
+    {
+      id: 9,
+      name: "Suco Natural",
+      sub: "Bebida gelada",
+      price: 7,
+      image: "/img/teste.png",
+    },
+    {
+      id: 10,
+      name: "Água Mineral",
+      sub: "Bebida",
+      price: 3,
+      image: "/img/teste.png",
+    },
+    {
+      id: 11,
+      name: "Refrigerante",
+      sub: "Bebida gelada",
+      price: 6,
+      image: "/img/teste.png",
+    },
+    {
+      id: 12,
+      name: "Achocolatado",
+      sub: "Bebida láctea",
+      price: 5,
+      image: "/img/teste.png",
+    },
   ],
 
   doces: [
-    { id: 13, name: "Bolo de Chocolate", sub: "Bolo", price: 7, image: "/img/teste.png" },
-    { id: 14, name: "Brigadeiro", sub: "Docinho", price: 3, image: "/img/teste.png" },
-    { id: 15, name: "Bala Sortida", sub: "Bala", price: 2, image: "/img/teste.png" },
-    { id: 16, name: "Brownie", sub: "Sobremesa", price: 8, image: "/img/teste.png" },
+    {
+      id: 13,
+      name: "Bolo de Chocolate",
+      sub: "Bolo",
+      price: 7,
+      image: "/img/teste.png",
+    },
+    {
+      id: 14,
+      name: "Brigadeiro",
+      sub: "Docinho",
+      price: 3,
+      image: "/img/teste.png",
+    },
+    {
+      id: 15,
+      name: "Bala Sortida",
+      sub: "Bala",
+      price: 2,
+      image: "/img/teste.png",
+    },
+    {
+      id: 16,
+      name: "Brownie",
+      sub: "Sobremesa",
+      price: 8,
+      image: "/img/teste.png",
+    },
   ],
 
   combos: [
-    { id: 17, name: "Combo Lanche", sub: "Lanche + Bebida", price: 18, image: "/img/teste.png" },
-    { id: 18, name: "Combo Salgado", sub: "Salgado + Suco", price: 12, image: "/img/teste.png" },
-    { id: 19, name: "Combo Doce", sub: "Doce + Bebida", price: 10, image: "/img/teste.png" },
+    {
+      id: 17,
+      name: "Combo Lanche",
+      sub: "Lanche + Bebida",
+      price: 18,
+      image: "/img/teste.png",
+    },
+    {
+      id: 18,
+      name: "Combo Salgado",
+      sub: "Salgado + Suco",
+      price: 12,
+      image: "/img/teste.png",
+    },
+    {
+      id: 19,
+      name: "Combo Doce",
+      sub: "Doce + Bebida",
+      price: 10,
+      image: "/img/teste.png",
+    },
   ],
 
   sorvetes: [
-    { id: 20, name: "Sorvete de Chocolate", sub: "Sorvete", price: 6, image: "/img/teste.png" },
-    { id: 21, name: "Picolé de Fruta", sub: "Picolé", price: 4, image: "/img/teste.png" },
-    { id: 22, name: "Açaí no Copo", sub: "Gelado", price: 12, image: "/img/teste.png" },
+    {
+      id: 20,
+      name: "Sorvete de Chocolate",
+      sub: "Sorvete",
+      price: 6,
+      image: "/img/teste.png",
+    },
+    {
+      id: 21,
+      name: "Picolé de Fruta",
+      sub: "Picolé",
+      price: 4,
+      image: "/img/teste.png",
+    },
+    {
+      id: 22,
+      name: "Açaí no Copo",
+      sub: "Gelado",
+      price: 12,
+      image: "/img/teste.png",
+    },
   ],
 };
-
 
 /* =========================
    TOAST
@@ -374,6 +505,25 @@ function addToCart(name, price) {
   showToast("success", "Produto adicionado!", `${name} foi para o carrinho`);
 }
 
+function validateCartProducts() {
+
+  const adminProducts =
+    JSON.parse(localStorage.getItem("adminProducts")) || [];
+
+  cart = cart.filter((cartItem) => {
+
+    const product = adminProducts.find(
+      (item) =>
+        item.name === cartItem.name &&
+        item.active === true
+    );
+
+    return !!product;
+  });
+
+  saveCart();
+}
+
 function decreaseItem(name) {
   const item = cart.find((product) => product.name === name);
 
@@ -397,7 +547,28 @@ function decreaseItem(name) {
 }
 
 function increaseItem(name) {
-  const item = cart.find((product) => product.name === name);
+
+  const adminProducts =
+    JSON.parse(localStorage.getItem("adminProducts")) || [];
+
+  const totalItems = cart.reduce((total, item) => {
+    return total + item.quantity;
+  }, 0);
+
+  if (totalItems >= 10) {
+
+    showToast(
+      "warning",
+      "Limite atingido!",
+      "Você só pode adicionar até 10 itens no carrinho"
+    );
+
+    return;
+  }
+
+  const item = cart.find(
+    (product) => product.name === name
+  );
 
   if (!item) return;
 
@@ -410,7 +581,7 @@ function increaseItem(name) {
   showToast(
     "success",
     "+1 unidade adicionada",
-    `${name} foi adicionado ao carrinho`,
+    `${name} foi adicionado ao carrinho`
   );
 }
 
@@ -542,6 +713,28 @@ function goToCheckout() {
     return;
   }
 
+
+  const adminProducts =
+  JSON.parse(localStorage.getItem("adminProducts")) || [];
+
+const invalidItem = cart.find((cartItem) => {
+  const product = adminProducts.find(
+    (item) => item.name === cartItem.name
+  );
+
+  return !product || !product.active;
+});
+
+if (invalidItem) {
+  showToast(
+    "error",
+    "Produto indisponível!",
+    `${invalidItem.name} não está mais disponível`
+  );
+
+  return;
+}
+
   goWithLoading("checkout.html", "Carregando . . .");
 }
 
@@ -549,26 +742,23 @@ function goToCheckout() {
    DARK MODE
 ========================= */
 
-if (localStorage.getItem("theme") === "dark") {
+if(localStorage.getItem("theme") === "dark"){
   document.body.classList.add("dark");
-
-  const icon = themeToggle.querySelector("i");
-
-  icon.classList.remove("fa-regular");
-  icon.classList.add("fa-solid");
+  document.documentElement.classList.add("dark");
 }
 
 themeToggle.addEventListener("click", () => {
   document.body.classList.toggle("dark");
+  document.documentElement.classList.toggle("dark");
 
   const icon = themeToggle.querySelector("i");
 
   icon.classList.toggle("fa-regular");
   icon.classList.toggle("fa-solid");
 
-  if (document.body.classList.contains("dark")) {
+  if(document.body.classList.contains("dark")){
     localStorage.setItem("theme", "dark");
-  } else {
+  }else{
     localStorage.setItem("theme", "light");
   }
 });
@@ -602,11 +792,13 @@ logoutButton.addEventListener("click", () => {
   }, 1200);
 });
 
+
 /* =========================
    INIT
 ========================= */
 
 if (userType !== "admin") {
+  validateCartProducts();
   renderCart();
   updateCartCount();
 }

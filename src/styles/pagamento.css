@@ -84,10 +84,13 @@ body{
   cursor:pointer;
 }
 
+/* =========================================
+   LOADING PADRÃO DO SISTEMA
+========================================= */
+
 .loading-screen{
   position:fixed;
   inset:0;
-
   width:100%;
   height:100vh;
 
@@ -140,6 +143,7 @@ body{
 
 .loader-logo img{
   width:100%;
+  object-fit:contain;
 }
 
 .loading-text{
@@ -147,7 +151,27 @@ body{
 
   color:#3a3a3a;
 
-  font-size:18px;
+  font-size:16px;
+
+  font-family:"Poppins", sans-serif;
+}
+
+/* DARK MODE */
+body.dark .loading-screen,
+html.dark .loading-screen{
+  background:#1f1f1f;
+}
+
+body.dark .loader-ring,
+html.dark .loader-ring{
+  border:5px solid #2e2e2e;
+  border-top:5px solid #ff0000;
+  border-right:5px solid #ff0000;
+}
+
+body.dark .loading-text,
+html.dark .loading-text{
+  color:#d5d5d5;
 }
 
 @keyframes spin{
@@ -172,13 +196,6 @@ body.dark .success-container p{
   color:#bdbdbd;
 }
 
-body.dark .loading-screen{
-  background:#212121;
-}
-
-body.dark .loading-text{
-  color:#d5d5d5;
-}
 
 /* TOAST */
 .toast-container{
