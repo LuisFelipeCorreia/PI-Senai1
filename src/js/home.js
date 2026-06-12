@@ -506,19 +506,23 @@ function addToCart(name, price) {
 }
 
 function validateCartProducts() {
-
   const adminProducts =
     JSON.parse(localStorage.getItem("adminProducts")) || [];
 
+  if (adminProducts.length === 0) {
+    return;
+  }
+
   cart = cart.filter((cartItem) => {
+    const product = adminProducts.find((item) => {
+      return item.name === cartItem.name;
+    });
 
-    const product = adminProducts.find(
-      (item) =>
-        item.name === cartItem.name &&
-        item.active === true
-    );
+    if (!product) {
+      return true;
+    }
 
-    return !!product;
+    return product.active !== false;
   });
 
   saveCart();
@@ -547,16 +551,38 @@ function decreaseItem(name) {
 }
 
 function increaseItem(name) {
-
   const adminProducts =
     JSON.parse(localStorage.getItem("adminProducts")) || [];
+
+  if (adminProducts.length > 0) {
+    const product = adminProducts.find((item) => {
+      return item.name === name;
+    });
+
+    if (product && product.active === false) {
+      showToast(
+        "error",
+        "Produto indisponível!",
+        "Este produto não está mais disponível"
+      );
+
+      cart = cart.filter((item) => {
+        return item.name !== name;
+      });
+
+      saveCart();
+      renderCart();
+      updateCartCount();
+
+      return;
+    }
+  }
 
   const totalItems = cart.reduce((total, item) => {
     return total + item.quantity;
   }, 0);
 
   if (totalItems >= 10) {
-
     showToast(
       "warning",
       "Limite atingido!",
@@ -566,9 +592,9 @@ function increaseItem(name) {
     return;
   }
 
-  const item = cart.find(
-    (product) => product.name === name
-  );
+  const item = cart.find((product) => {
+    return product.name === name;
+  });
 
   if (!item) return;
 
@@ -707,33 +733,34 @@ function goToCheckout() {
     showToast(
       "error",
       "Carrinho vazio!",
-      "Adicione produtos antes de continuar",
+      "Adicione produtos antes de continuar"
     );
 
     return;
   }
 
-
   const adminProducts =
-  JSON.parse(localStorage.getItem("adminProducts")) || [];
+    JSON.parse(localStorage.getItem("adminProducts")) || [];
 
-const invalidItem = cart.find((cartItem) => {
-  const product = adminProducts.find(
-    (item) => item.name === cartItem.name
-  );
+  if (adminProducts.length > 0) {
+    const invalidItem = cart.find((cartItem) => {
+      const product = adminProducts.find((item) => {
+        return item.name === cartItem.name;
+      });
 
-  return !product || !product.active;
-});
+      return product && product.active === false;
+    });
 
-if (invalidItem) {
-  showToast(
-    "error",
-    "Produto indisponível!",
-    `${invalidItem.name} não está mais disponível`
-  );
+    if (invalidItem) {
+      showToast(
+        "error",
+        "Produto indisponível!",
+        `${invalidItem.name} não está mais disponível`
+      );
 
-  return;
-}
+      return;
+    }
+  }
 
   goWithLoading("checkout.html", "Carregando . . .");
 }

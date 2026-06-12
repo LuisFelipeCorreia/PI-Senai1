@@ -120,7 +120,7 @@ function handleLogin() {
   const email = document.querySelector("input[type='email']").value.trim();
   const senha = password.value.trim();
 
-  const adminEmail = "admin@sesisenai.com";
+  const adminEmail = "admin@portalsenaisp.org.br";
   const adminSenha = "admin123";
 
   const userEmail = "marco.costa@portalsenaisp.org.br";
