@@ -412,9 +412,20 @@ if (userType === "admin") {
 cartCount = document.getElementById("cartCount");
 
 function openEditModal(productId) {
-  const allProducts = Object.values(menuProducts).flat();
+  const adminProducts =
+    JSON.parse(localStorage.getItem("adminProducts")) || [];
 
-  const product = allProducts.find((item) => item.id === productId);
+  const baseProducts =
+    Object.values(menuProducts).flat();
+
+  const allProducts = [
+    ...baseProducts,
+    ...adminProducts
+  ];
+
+  const product = allProducts.find((item) => {
+    return item.id === productId;
+  });
 
   if (!product) return;
 
@@ -435,10 +446,29 @@ closeEditModal.addEventListener("click", () => {
 saveEditBtn.addEventListener("click", () => {
   if (!currentEditingProduct) return;
 
-  currentEditingProduct.name = editName.value;
-  currentEditingProduct.sub = editSub.value;
-  currentEditingProduct.price = Number(editPrice.value);
-  currentEditingProduct.image = editImage.value;
+  const adminProducts =
+    JSON.parse(localStorage.getItem("adminProducts")) || [];
+
+  const productIndex = adminProducts.findIndex((item) => {
+    return item.id === currentEditingProduct.id;
+  });
+
+  if (productIndex !== -1) {
+    adminProducts[productIndex].name = editName.value;
+    adminProducts[productIndex].sub = editSub.value;
+    adminProducts[productIndex].price = Number(editPrice.value);
+    adminProducts[productIndex].image = editImage.value;
+
+    localStorage.setItem(
+      "adminProducts",
+      JSON.stringify(adminProducts)
+    );
+  } else {
+    currentEditingProduct.name = editName.value;
+    currentEditingProduct.sub = editSub.value;
+    currentEditingProduct.price = Number(editPrice.value);
+    currentEditingProduct.image = editImage.value;
+  }
 
   renderProducts(currentCategory);
 
@@ -447,7 +477,7 @@ saveEditBtn.addEventListener("click", () => {
   showToast(
     "success",
     "Produto editado!",
-    "As alterações foram salvas corretamente",
+    "As alterações foram salvas corretamente"
   );
 });
 
