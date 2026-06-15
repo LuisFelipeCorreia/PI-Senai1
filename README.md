@@ -1,84 +1,41 @@
-#  Sistema Cantina Escolar
+# Banco de Dados – SESI Alimentação
 
-Sistema desenvolvido para gerenciamento de pedidos da cantina escolar SENAI/SESI.
+Esta branch reúne toda a documentação e os artefatos desenvolvidos na disciplina de **Banco de Dados** para o projeto integrador **SESI Alimentação**.
 
----
+O objetivo desta etapa foi realizar a modelagem, implementação e documentação do banco de dados responsável por armazenar e gerenciar as informações do sistema, garantindo organização, integridade e consistência dos dados.
 
-#  Objetivo
+## Conteúdo da Branch
 
-Permitir que alunos realizem pedidos antecipados de alimentos e bebidas, reduzindo filas e melhorando o atendimento da cantina.
+* Levantamento de Requisitos
+* Diagrama Entidade-Relacionamento (DER)
+* Modelo Lógico Relacional
+* Normalização (1FN, 2FN e 3FN)
+* Dicionário de Dados
+* Scripts SQL (DDL, DML e DQL)
+* Views e consultas
+* Documentação técnica do banco
 
----
+## Tecnologias Utilizadas
 
-#  Funcionalidades
+* MySQL
+* BR Modelo
+* SQL
+* Docker
 
-* Login de usuários
-* Cardápio digital
-* Carrinho de compras
-* Escolha do horário de retirada
-* Pagamento
-* Dashboard administrativo
-* Controle de pedidos
+## Entidades Principais
 
----
+* Aluno
+* Administrador
+* Categoria
+* Produto
+* Pedido
+* Item do Pedido
+* Forma de Pagamento
 
-#  Tecnologias Utilizadas
+## Objetivo
 
-* HTML
-* CSS
-* JavaScript
-* Git/GitHub
-* Figma
+Desenvolver uma estrutura de banco de dados relacional capaz de atender às necessidades do sistema SESI Alimentação, permitindo o gerenciamento eficiente de alunos, produtos, pedidos, pagamentos e estoque da cantina escolar.
 
----
+## Projeto Integrador
 
-#  Engenharia de Software
-
-O projeto utiliza:
-
-* UML
-* DER
-* Git Flow
-* Conventional Commits
-* GitHub Project
-* PRD
-* Prototipação
-
----
-
-#  Equipe
-
-* Kaique Primissia
-* Luís Felipe Correia
-* Marco Antônio
-* Nicolas Ricardo
-
----
-
-#  Estrutura do Projeto
-
-```bash
-/docs
-/src
-/assets
-README.md
-```
-
----
-
-#  Fluxo Git
-
-Branches utilizadas:
-
-* main
-* develop
-* feature/login
-* feature/cardapio
-* feature/pagamento
-* feature/admin
-
----
-
-#  Status do Projeto
-
- Em desenvolvimento
+O SESI Alimentação é uma plataforma web desenvolvida para modernizar o atendimento da cantina escolar por meio da realização de pedidos e pagamentos online, proporcionando mais agilidade, organização e praticidade aos usuários.
