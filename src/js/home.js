@@ -845,7 +845,7 @@ logoutButton.addEventListener("click", () => {
   loadingScreen.style.display = "flex";
 
   setTimeout(() => {
-    window.location.href = "index.html";
+    window.location.href = "login.html";
   }, 1200);
 });
 
