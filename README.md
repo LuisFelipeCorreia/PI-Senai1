@@ -1,84 +1,35 @@
-#  Sistema Cantina Escolar
+# Documentação de Lógica de Programação
 
-Sistema desenvolvido para gerenciamento de pedidos da cantina escolar SENAI/SESI.
+Esta pasta reúne os artefatos desenvolvidos na disciplina de **Lógica de Programação** para o Projeto Integrador **SESI Alimentação**.
 
----
+## Conteúdo
 
-#  Objetivo
+* Apresentação do Projeto
+* Fluxograma do Sistema
+* Pseudocódigo
+* Estruturas de Dados
+* Funções do Sistema
+* Estruturas de Controle
+* Boas Práticas de Programação
+* Documentação da Lógica do Sistema
 
-Permitir que alunos realizem pedidos antecipados de alimentos e bebidas, reduzindo filas e melhorando o atendimento da cantina.
+## Conceitos Aplicados
 
----
+* Algoritmos
+* Fluxogramas
+* Pseudocódigo
+* Estruturas Condicionais
+* Estruturas de Repetição
+* Modularização
+* Estruturas de Dados
+* Organização e Qualidade de Código
 
-#  Funcionalidades
+## Objetivo
 
-* Login de usuários
-* Cardápio digital
-* Carrinho de compras
-* Escolha do horário de retirada
-* Pagamento
-* Dashboard administrativo
-* Controle de pedidos
+Planejar e documentar toda a lógica de funcionamento do sistema, definindo o fluxo de execução, regras de negócio e processos necessários para o desenvolvimento da aplicação.
 
----
+## Projeto
 
-#  Tecnologias Utilizadas
+O **SESI Alimentação** é uma plataforma web desenvolvida para permitir que alunos realizem pedidos e pagamentos online na cantina escolar, reduzindo filas e proporcionando mais agilidade no atendimento.
 
-* HTML
-* CSS
-* JavaScript
-* Git/GitHub
-* Figma
-
----
-
-#  Engenharia de Software
-
-O projeto utiliza:
-
-* UML
-* DER
-* Git Flow
-* Conventional Commits
-* GitHub Project
-* PRD
-* Prototipação
-
----
-
-#  Equipe
-
-* Kaique Primissia
-* Luís Felipe Correia
-* Marco Antônio
-* Nicolas Ricardo
-
----
-
-#  Estrutura do Projeto
-
-```bash
-/docs
-/src
-/assets
-README.md
-```
-
----
-
-#  Fluxo Git
-
-Branches utilizadas:
-
-* main
-* develop
-* feature/login
-* feature/cardapio
-* feature/pagamento
-* feature/admin
-
----
-
-#  Status do Projeto
-
- Em desenvolvimento
+A documentação desta pasta representa a base lógica do sistema, servindo como referência para a implementação das funcionalidades desenvolvidas nas demais disciplinas do Projeto Integrador.
