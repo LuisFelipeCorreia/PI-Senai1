@@ -1,84 +1,39 @@
-#  Sistema Cantina Escolar
+# Documentação de Engenharia de Software
 
-Sistema desenvolvido para gerenciamento de pedidos da cantina escolar SENAI/SESI.
+Esta pasta contém toda a documentação produzida na disciplina de **Engenharia de Software** para o Projeto Integrador **SESI Alimentação**.
 
----
+## Conteúdo
 
-#  Objetivo
+* Introdução do Projeto
+* Objetivos
+* Justificativa
+* Metodologia de Desenvolvimento
+* Levantamento de Requisitos
+* Regras de Negócio
+* Casos de Uso
+* Diagramas e Modelagens
+* Documentação Técnica
+* Artefatos do Projeto
 
-Permitir que alunos realizem pedidos antecipados de alimentos e bebidas, reduzindo filas e melhorando o atendimento da cantina.
+## Metodologia Utilizada
 
----
+O projeto foi desenvolvido utilizando conceitos de Engenharia de Software, com foco em planejamento, organização, documentação e versionamento das atividades. O desenvolvimento ocorreu de forma incremental, permitindo a implementação gradual das funcionalidades do sistema.
 
-#  Funcionalidades
+## Tecnologias Utilizadas
 
-* Login de usuários
-* Cardápio digital
-* Carrinho de compras
-* Escolha do horário de retirada
-* Pagamento
-* Dashboard administrativo
-* Controle de pedidos
-
----
-
-#  Tecnologias Utilizadas
-
-* HTML
-* CSS
+* HTML5
+* CSS3
 * JavaScript
-* Git/GitHub
+* MySQL
+* Git e GitHub
+* Visual Studio Code
 * Figma
+* Draw.io
 
----
+## Objetivo
 
-#  Engenharia de Software
+Documentar e estruturar o desenvolvimento do sistema **SESI Alimentação**, garantindo a aplicação das boas práticas de Engenharia de Software durante todas as etapas do projeto.
 
-O projeto utiliza:
+## Projeto
 
-* UML
-* DER
-* Git Flow
-* Conventional Commits
-* GitHub Project
-* PRD
-* Prototipação
-
----
-
-#  Equipe
-
-* Kaique Primissia
-* Luís Felipe Correia
-* Marco Antônio
-* Nicolas Ricardo
-
----
-
-#  Estrutura do Projeto
-
-```bash
-/docs
-/src
-/assets
-README.md
-```
-
----
-
-#  Fluxo Git
-
-Branches utilizadas:
-
-* main
-* develop
-* feature/login
-* feature/cardapio
-* feature/pagamento
-* feature/admin
-
----
-
-#  Status do Projeto
-
- Em desenvolvimento
+O **SESI Alimentação** é uma plataforma web desenvolvida para modernizar o atendimento da cantina escolar por meio da realização de pedidos e pagamentos online, proporcionando mais praticidade aos alunos e maior controle administrativo para os responsáveis pela cantina.
