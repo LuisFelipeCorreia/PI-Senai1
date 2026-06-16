@@ -81,4 +81,6 @@ Branches utilizadas:
 
 #  Status do Projeto
 
- Em desenvolvimento
+ Finalizado
+
+Acesse nosso site: https://sesialimentacao.netlify.app
